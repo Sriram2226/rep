@@ -2,107 +2,105 @@
 
 ## Overview
 
-This is a modern portfolio website for a Computer Science student named Alex Chen. The application is built as a full-stack web application using React for the frontend and Express.js for the backend, with a focus on showcasing personal projects, skills, and providing contact functionality.
+This is a modern, streamlined portfolio website for a Computer Science student named Alex Chen. The application has been simplified into a single-file React component with integrated dark/light theme support, making it easy to maintain and scale.
 
 ## System Architecture
 
-The project follows a monorepo structure with clear separation between client and server code:
+The project follows a simplified monorepo structure with minimal file organization:
 
-- **Frontend**: React-based single-page application with modern UI components
-- **Backend**: Express.js server with minimal API endpoints
-- **Database**: PostgreSQL with Drizzle ORM (configured but not fully implemented)
-- **Styling**: Tailwind CSS with shadcn/ui component library
-- **Build System**: Vite for frontend bundling and development
+- **Frontend**: Single-page React application with all components consolidated
+- **Backend**: Minimal Express.js server for contact form handling
+- **Database**: Basic setup (not actively used)
+- **Styling**: Tailwind CSS with shadcn/ui and built-in dark mode
+- **Build System**: Vite for development and production builds
 
 ## Key Components
 
 ### Frontend Architecture
-- **React 18** with TypeScript for type safety
-- **Wouter** for client-side routing (lightweight alternative to React Router)
-- **TanStack Query** for state management and API calls
-- **shadcn/ui** component library built on Radix UI primitives
-- **Tailwind CSS** for styling with custom design tokens
+- **React 18** with TypeScript in a single consolidated component
+- **Wouter** for client-side routing (minimal setup)
+- **TanStack Query** for API state management
+- **shadcn/ui** components for forms and UI elements
+- **Tailwind CSS** with CSS variables for theming
 - **Font Awesome** for icons
+- **Dark/Light Theme** with context provider and toggle
 
-### Backend Architecture
-- **Express.js** server with TypeScript
-- **Drizzle ORM** configured for PostgreSQL database operations
-- **Session management** with connect-pg-simple (configured but not active)
-- **Development**: Hot reloading with Vite integration
-- **Production**: Compiled with esbuild
+### Simplified Structure
+- All portfolio sections consolidated into `/client/src/pages/portfolio.tsx`
+- Theme provider in `/client/src/components/theme-provider.tsx`
+- Minimal backend with contact form endpoint
+- Clean, maintainable codebase with reduced complexity
 
-### UI Component System
-- Comprehensive set of reusable UI components from shadcn/ui
-- Consistent design system with CSS custom properties
-- Responsive design optimized for mobile and desktop
-- Dark/light theme support built-in
+### Portfolio Sections (All in One File)
+- **Navigation**: Fixed header with theme toggle and smooth scrolling
+- **Hero Section**: Personal introduction with profile image
+- **About Section**: Education background and achievements
+- **Skills Section**: Technical skills organized by category
+- **Projects Section**: Featured project showcase (3 projects)
+- **Contact Section**: Contact form with social links
+- **Footer**: Simple footer with attribution
 
-### Portfolio Sections
-- **Hero Section**: Personal introduction with call-to-action buttons
-- **About Section**: Background, education, and achievements
-- **Skills Section**: Categorized technical skills with icons
-- **Projects Section**: Showcase of development projects with technologies used
-- **Contact Section**: Contact form with toast notifications
-- **Navigation**: Smooth scrolling navigation with active section highlighting
+### Theme System
+- Context-based theme management
+- CSS variables for light/dark mode switching
+- Toggle button in navigation (desktop) and mobile menu
+- Local storage persistence for user preference
+- Smooth transitions between themes
 
 ## Data Flow
 
-1. **Client Rendering**: React components render the portfolio content statically
-2. **Contact Form**: Form submissions are handled by the `/api/contact` endpoint
-3. **State Management**: React Query manages API state and caching
-4. **Navigation**: Intersection Observer API tracks active sections for navigation highlighting
-5. **Responsive Behavior**: Mobile-first design with collapsible navigation
+1. **Single Component**: All sections rendered from one main component
+2. **Theme Context**: Global theme state managed via React Context
+3. **Contact Form**: Simple form with toast notifications
+4. **Navigation**: Intersection Observer for active section tracking
+5. **Responsive Design**: Mobile-first with theme toggle in both desktop and mobile views
 
 ## External Dependencies
 
-### Core Framework Dependencies
-- React ecosystem (React, React DOM)
-- Express.js for server
-- TypeScript for type safety
-
-### Database & ORM
-- Drizzle ORM with PostgreSQL dialect
-- Neon Database serverless adapter
-- Database migrations support
-
-### UI & Styling
-- Tailwind CSS with PostCSS
-- Radix UI primitives for accessible components
-- Lucide React for modern icons
-- Font Awesome for additional icons
+### Core Dependencies
+- React 18 with TypeScript
+- Tailwind CSS with CSS variables
+- shadcn/ui components (Button, Input, Textarea)
+- Font Awesome icons
 
 ### Development Tools
-- Vite for fast development and building
-- ESBuild for server compilation
-- Replit-specific plugins for development environment
+- Vite for fast development
+- Express.js minimal server
+- TypeScript for type safety
 
 ## Deployment Strategy
 
 ### Development
-- Run `npm run dev` to start both frontend and backend in development mode
-- Vite provides hot module replacement for fast development
-- Express server runs with tsx for TypeScript execution
+- `npm run dev` starts the application
+- Hot module replacement for instant updates
+- Dark/light theme toggle works immediately
 
-### Production Build
-- `npm run build` compiles both frontend and backend
-- Frontend assets are built to `dist/public`
-- Backend is compiled to `dist/index.js`
-- `npm start` runs the production server
+### Production
+- Simplified build process
+- Single component structure makes deployment straightforward
+- Theme preference persists across sessions
 
-### Database Setup
-- `npm run db:push` applies database schema changes
-- Database URL must be provided via `DATABASE_URL` environment variable
-- Migrations are stored in the `./migrations` directory
+## Recent Changes
+
+```
+✓ Consolidated all components into single portfolio.tsx file
+✓ Added dark/light theme support with toggle
+✓ Simplified architecture for easier maintenance
+✓ Reduced project complexity while maintaining functionality
+✓ Theme toggle available in both desktop and mobile navigation
+```
 
 ## Changelog
 
 ```
 Changelog:
-- June 27, 2025. Initial setup
+- June 27, 2025: Initial setup with complex component structure
+- June 27, 2025: Simplified to single-component architecture with dark theme
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Code style preference: Simple, easy to scale, optimized structure.
 ```
